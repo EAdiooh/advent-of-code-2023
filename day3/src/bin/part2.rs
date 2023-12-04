@@ -76,7 +76,6 @@ fn part2(input: &str) -> i32{
   for (x, y) in gears {
     let mut last_point: Vec<(i32, i32)> = Vec::new();
     let mut geared: Vec<&i32> = Vec::new();
-    let mut last_number: &i32 = &0;
 
     for check_point in COORTOCHECK.iter().map(|(dx, dy)| (x + dx, y + dy)) {
       for (number, points) in &numbers{
@@ -86,7 +85,6 @@ fn part2(input: &str) -> i32{
           geared.push(number);
           //Adding all point linked to the numbers for not repeating ourself
           last_point = points.clone();
-          last_number = number;
         }
       }
      
